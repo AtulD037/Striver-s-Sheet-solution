@@ -46,4 +46,12 @@ public class CustomDoublyLinkedList {
         }
         System.out.println("End"); // Print end at the last to confirm that we have finished our iteration
     }
+    public void reverseDisplay(){
+        Node last = null;
+        while (last!=null){
+            System.out.println(last.val+" -> ");
+            last=last.prev;
+        }
+        System.out.println("End");
+    }
 }

@@ -29,6 +29,7 @@ public class DriverLL {
         linkedList.insertFirst(3);
         linkedList.insertFirst(4);
         linkedList.display();
+        linkedList.reverseDisplay();
 
 
     }
