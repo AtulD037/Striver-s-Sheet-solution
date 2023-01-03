@@ -1,19 +1,27 @@
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Test {
-    static int[][] rotate90Degree(int[][] matrix){
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = i; j < matrix[0].length; j++) {
-                int temp = matrix[i][j];
-                matrix[i][j] = matrix[j][i];
-                matrix[j][i] = temp;
+    static int[] twoSum(int[] nums, int target){
+        int[] result = new int[2];
+
+        Map<Integer,Integer> hmap = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (hmap.containsKey(target-nums[i])){
+                result[1] = i;
+                result[0] = hmap.get(target-nums[i]);
+                return result;
+            }
+            else {
+                hmap.put(nums[i], i);
             }
         }
-        return matrix;
+        return result;
     }
 
     public static void main(String[] args) {
-        int[][] matrix = {{1,2,3},{4,5,6},{7,8,9}};
-        System.out.println(Arrays.deepToString(rotate90Degree(matrix)));
+        int[] arr = {2,7,11,15};
+        System.out.println(Arrays.toString(twoSum(arr,9)));
     }
 }
